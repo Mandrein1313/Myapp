@@ -1,8 +1,10 @@
+
 package com.example.myapp;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,5 +30,11 @@ public class MainActivity extends AppCompatActivity {
                 products
         );
         listView.setAdapter(adapter);
+
+        // เพิ่มการคลิกเพื่อแสดง Toast ชื่อสินค้า
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            String productName = products[position];
+            Toast.makeText(MainActivity.this, productName, Toast.LENGTH_SHORT).show();
+        });
     }
 }
