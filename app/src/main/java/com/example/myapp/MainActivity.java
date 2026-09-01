@@ -1,4 +1,3 @@
-
 package com.example.myapp;
 
 import android.os.Bundle;
